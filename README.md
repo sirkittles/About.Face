@@ -79,6 +79,10 @@ Routing Sample
 ![Wireframe](https://i.imgur.com/NLXDhLe.png)<br>
 ![Wireframe](https://i.imgur.com/Fhtskrb.png)
 
+## Component Hierarchy
+
+![Hierarchy](https://i.imgur.com/Lbt6tNZ.png)
+
 #### MVP
 
 - User can create a post with products they used and how the condition of their skin was. These posts will render on their tracker page.
