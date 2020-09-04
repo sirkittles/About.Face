@@ -75,8 +75,8 @@ Routing Sample
 
 ## Wireframes
 
-![Wireframe](https://i.imgur.com/MDkDTun.png)
-![Wireframe](https://i.imgur.com/NLXDhLe.png)
+![Wireframe](https://i.imgur.com/MDkDTun.png)<br>
+![Wireframe](https://i.imgur.com/NLXDhLe.png)<br>
 ![Wireframe](https://i.imgur.com/Fhtskrb.png)
 
 #### MVP
