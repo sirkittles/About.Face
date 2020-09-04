@@ -1,68 +1,113 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Project Overview
 
-In the project directory, you can run:
+## About.Face
 
-### `npm start`
+## Project Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Let About.Face help you to build and optimize your skincare routine. The secret to great skin lies in consistency. By logging and tracking your skincare journey, you can develop the habits needed to turn your skin around, about face!
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+About.Face allows you to enter products in your routine and track when you used which product and how they effected your skin allowing you to pinpoint products that work well, products that don't and whether or not you are over-exfoliating.
 
-### `npm test`
+## API and Data Sample
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Log Sample
+```
+{
+    "records": [
+        {
+            "id": "recYL9RlwA0b5kCH6",
+            "fields": {
+                "date-saved": "2020-08-21T01:30:00.000Z",
+                "routine": "Night Routine",
+                "comments": "Skin feels a bit dry today so I layered moisturizers.",
+                "condition": "dry"
+            },
+            "createdTime": "2020-09-04T13:09:12.000Z"
+        },
+    ],
+    "offset": "recwnCJpSjIGNKebY"
+}
+```
 
-### `npm run build`
+Products Sample
+```
+{
+    "records": [
+        {
+            "id": "recrUEXMhU4LgOa4p",
+            "fields": {
+                "name": "Bioderma Sensibio H20",
+                "comments": "best micellar water ever",
+                "date-opened": "2020-05-06"
+            },
+            "createdTime": "2020-09-04T13:14:16.000Z"
+        },
+    ],
+    "offset": "recwNyomtxE0n7xbo"
+}
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Routing Sample
+```
+{
+    "records": [
+        {
+            "id": "recTPnvJAU9hyuw8p",
+            "fields": {
+                "name": "Night Routine",
+                "first-cleanser": "Bioderma Sensibio H2O",
+                "second-cleanser": "Sunday Riley Ceramic Slip Cleanser ",
+                "essence": "Tirtir Rosemary One Essence",
+                "toner": "Innisfree Blueberry Rebalancing Skin",
+                "serum": "L'Occitane Immortelle Reset",
+                "moisturizer": "Cell Fusion C Laser Rejuvenation Cream",
+                "oil": "Sunday Riley Juno",
+                "exfoliant": "Dermalogica Daily Microfoliant"
+            },
+            "createdTime": "2020-09-04T13:17:05.000Z"
+        },
+    ],
+    "offset": "rec3iuWE7JjwfJA2x"
+}
+```
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Wireframes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Wireframe](https://i.imgur.com/MDkDTun.png)
+![Wireframe](https://i.imgur.com/NLXDhLe.png)
+![Wireframe](https://i.imgur.com/Fhtskrb.png)
 
-### `npm run eject`
+#### MVP
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- User can create a post with products they used and how the condition of their skin was. These posts will render on their tracker page.
+- User can delete posts.
+- User's current streak is displayed, days in a row they have made a post.
+- User's total amount of posts is displayed.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### PostMVP
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- User can store their current products.
+- User can create a routine using the products they have entered.
+- User can create posts which log which routine they used with a drop down menu.
+- User's total amount of posts will be per month.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project Schedule
 
-## Learn More
+|  Day | Deliverable | Status
+|---|---| ---|
+|Sept 3| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Sept 4| Project Approval | Incomplete
+|Sept 4| Core Application Structure (JS, JSX, HTML, CSS, etc.) | Incomplete
+|Sept 8| Complete Layout of Application / Start CSS | Incomplete
+|Sept 9| MVP / Start Post-MVP | Incomplete
+|Sept 10| Post-MVP | Incomplete
+|Sept 11| Presentations | Incomplete
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Code Snippet
 
-### Code Splitting
+ to be added.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Change Log
