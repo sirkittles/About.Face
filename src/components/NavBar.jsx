@@ -1,8 +1,12 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, Route } from 'react-router-dom';
+import axios from 'axios';
+import Products from './Products';
 import './NavBar.css';
 
 const NavBar = () => {
+
+
   return (
     <div className="navbar">
       <Link to="/routine-logs">
