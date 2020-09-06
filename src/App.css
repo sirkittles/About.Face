@@ -6,6 +6,20 @@
   padding: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: white;
+}
+
+nav {
+  text-align: center;
+  background-color: lightgrey;
+  padding: 5px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
