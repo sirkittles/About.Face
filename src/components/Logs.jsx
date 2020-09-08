@@ -42,7 +42,11 @@ const Logs = (props) => {
         <p>Skin Condition: {condition}</p>
         <div className="edit-log-section">
           {toggleEdit && (
-            <EditLog toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} />
+            <EditLog
+              log={log}
+              getLogs={getLogs}
+              setGetLogs={setGetLogs}
+            />
           )}
           <button onClick={handleDelete}>Delete</button>
           <button onClick={handleClick}>Edit</button>
