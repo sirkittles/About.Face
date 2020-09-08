@@ -7,7 +7,7 @@ const EditLog = (props) => {
   const [comments, setComments] = useState(props.log.fields.comments);
   const [routine, setRoutine] = useState(props.log.fields.routine);
   const [condition, setCondition] = useState(props.log.fields.condition);
-  // console.log(props.log.fields.condition)
+  // console.log(props.log.fields.condition;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +25,7 @@ const EditLog = (props) => {
       }
     });
     setGetLogs(!getLogs);
+    window.location.reload(false);
   }
 
   return (
