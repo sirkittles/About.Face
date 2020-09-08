@@ -59,7 +59,12 @@ function App() {
             <div className="logs-container">
               <h4>Skincare Logs</h4>
               {logs.map((log) => (
-                <Logs log={log} key={log.id} />
+                <Logs
+                  log={log}
+                  key={log.id}
+                  getLogs={getLogs}
+                  setGetLogs={setGetLogs}
+                />
               ))}
             </div>
             <CreateLog
