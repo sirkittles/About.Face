@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Products from "./components/Products";
 import Logs from "./components/Logs";
 import "./App.css";
+import CreateLog from "./components/CreateLog";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -61,6 +62,10 @@ function App() {
                 <Logs log={log} key={log.id} />
               ))}
             </div>
+            <CreateLog
+              getLogs={getLogs}
+              setGetLogs={setGetLogs}
+            />
           </Route>
           <Route path="/products">
             {/* <Products products={products} /> */}
