@@ -5,7 +5,7 @@ const Products = (props) => {
   return (
     <div className="products-container">
       <h3>Products</h3>
-      
+
     </div>
   )
 }

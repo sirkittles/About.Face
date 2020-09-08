@@ -4,25 +4,40 @@ import axios from 'axios';
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Products from "./components/Products";
+import Logs from "./components/Logs";
 import "./App.css";
 
 function App() {
   const [products, setProducts] = useState([]);
   const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
+  const [getLogs, setGetLogs] = useState('');
 
-  const getProducts = async () => {
-    const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`, {
+  const getLogsData = async () => {
+    const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       }
     });
-    setProducts(res.data.records);
+    setLogs(res.data.records);
   }
 
   useEffect(() => {
-    getProducts();
-  }, [setProducts]);
+    getLogsData();
+  }, [setGetLogs])
+
+  // const getProductsData = async () => {
+  //   const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`, {
+  //     headers: {
+  //       'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+  //     }
+  //   });
+  //   setProducts(res.data.records);
+  // }
+
+  // useEffect(() => {
+  //   getProducts();
+  // }, [setProducts]);
 
   return (
     <div className="App">
@@ -36,8 +51,19 @@ function App() {
       </nav>
       <main>
         <Switch>
+          <Route exact path="/">
+          <h4>Skincare Logs</h4>
+            {
+              logs.map(log => (
+                <Logs
+                  log={log}
+                  key={log.id}
+                />
+              ))
+            }
+          </Route>
         <Route path="/products">
-          <Products products={products} />
+          {/* <Products products={products} /> */}
         </Route>
         </Switch>
       </main>
