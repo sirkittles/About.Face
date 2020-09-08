@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import axios from 'axios';
 // import Products from './Products';
-// import './NavBar.css';
+import './NavBar.css';
 
 const NavBar = () => {
 

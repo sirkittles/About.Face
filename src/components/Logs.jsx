@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
+import EditLog from "./EditLog";
 
 const Logs = (props) => {
   // console.log(props.log.fields);
@@ -13,17 +14,22 @@ const Logs = (props) => {
   dateSaved = dateSaved.toDateString();
   // console.log(dateSaved);
   // console.log(timeSaved);
-  console.log(log.id)
+  // console.log(log.id)
+  const [toggleEdit, setToggleEdit] = useState(false);
 
   const handleDelete = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`;
     await axios.delete(url, {
       headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       },
     });
     setGetLogs(!getLogs);
-  }
+  };
+
+  const handleClick = () => {
+    setToggleEdit(!toggleEdit);
+  };
 
   return (
     <div className="log-post-container">
@@ -35,9 +41,11 @@ const Logs = (props) => {
         <p>{comments}</p>
         <p>Skin Condition: {condition}</p>
         <div className="edit-log-section">
+          {toggleEdit && (
+            <EditLog toggleEdit={toggleEdit} setToggleEdit={setToggleEdit} />
+          )}
           <button onClick={handleDelete}>Delete</button>
-          {/* <button
-            onClick=<UpdateLog /> >Edit</button> */}
+          <button onClick={handleClick}>Edit</button>
         </div>
       </div>
     </div>
