@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, Route, Switch } from "react-router-dom";
-import axios from 'axios';
+import axios from "axios";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Products from "./components/Products";
@@ -11,20 +11,23 @@ function App() {
   const [products, setProducts] = useState([]);
   const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
-  const [getLogs, setGetLogs] = useState('');
+  const [getLogs, setGetLogs] = useState("");
 
   const getLogsData = async () => {
-    const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+    const res = await axios.get(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
       }
-    });
+    );
     setLogs(res.data.records);
-  }
+  };
 
   useEffect(() => {
     getLogsData();
-  }, [setGetLogs])
+  }, [setGetLogs]);
 
   // const getProductsData = async () => {
   //   const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`, {
@@ -52,19 +55,16 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-          <h4>Skincare Logs</h4>
-            {
-              logs.map(log => (
-                <Logs
-                  log={log}
-                  key={log.id}
-                />
-              ))
-            }
+            <div className="logs-container">
+              <h4>Skincare Logs</h4>
+              {logs.map((log) => (
+                <Logs log={log} key={log.id} />
+              ))}
+            </div>
           </Route>
-        <Route path="/products">
-          {/* <Products products={products} /> */}
-        </Route>
+          <Route path="/products">
+            {/* <Products products={products} /> */}
+          </Route>
         </Switch>
       </main>
     </div>

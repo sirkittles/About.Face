@@ -20,7 +20,25 @@ nav {
   padding: 5px;
 }
 
-.App-header {
+.logs-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+}
+
+.log-post-container {
+  display: flex;
+  border: 1px solid black;
+  margin: 20px auto;
+  padding: 10px;
+  width: 400px;
+  justify-content: center;
+}
+
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -29,5 +47,5 @@ nav {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
