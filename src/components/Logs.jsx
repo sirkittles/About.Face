@@ -13,6 +13,7 @@ const Logs = (props) => {
   dateSaved = dateSaved.toDateString();
   // console.log(dateSaved);
   // console.log(timeSaved);
+  console.log(log.id)
 
   const handleDelete = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`;
@@ -35,6 +36,8 @@ const Logs = (props) => {
         <p>Skin Condition: {condition}</p>
         <div className="edit-log-section">
           <button onClick={handleDelete}>Delete</button>
+          {/* <button
+            onClick=<UpdateLog /> >Edit</button> */}
         </div>
       </div>
     </div>

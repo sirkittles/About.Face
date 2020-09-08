@@ -3,14 +3,14 @@ import { Link, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import Products from "./components/Products";
+// import Products from "./components/Products";
 import Logs from "./components/Logs";
 import "./App.css";
 import CreateLog from "./components/CreateLog";
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const [routines, setRoutines] = useState([]);
+  // const [products, setProducts] = useState([]);
+  // const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
 
