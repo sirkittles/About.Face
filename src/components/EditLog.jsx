@@ -2,13 +2,15 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const EditLog = (props) => {
-  const { toggleEdit, setToggleEdit, getLogs, setGetLogs} = props;
+  const { getLogs, setGetLogs, log } = props;
   const [dateSaved, setDateSaved] = useState(props.log.fields.dateSaved);
   const [comments, setComments] = useState(props.log.fields.comments);
   const [routine, setRoutine] = useState(props.log.fields.routine);
   const [condition, setCondition] = useState(props.log.fields.condition);
+  // console.log(props.log.fields.condition)
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     const fields = {
       comments,
       dateSaved,
@@ -16,10 +18,10 @@ const EditLog = (props) => {
       condition,
     };
 
-    await axios.put(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`, { fields }, {
+    await axios.put(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`, { fields }, {
       headers: {
-        'Authorization': `Bearers ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        'Content-Type': `applictaion/json`,
+        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        'Content-Type': `application/json`,
       }
     });
     setGetLogs(!getLogs);
@@ -53,7 +55,6 @@ const EditLog = (props) => {
         <input
           name="condition"
           type="text"
-          placeholder="skin condition"
           onChange={(e) => setCondition(e.target.value)}
         />
         <button type="submit">Submit</button>
