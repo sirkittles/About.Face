@@ -9,8 +9,8 @@ const Logs = (props) => {
   dateSaved = dateSaved[0];
   dateSaved = new Date(dateSaved.replace(/-/g, "/"));
   dateSaved = dateSaved.toDateString();
-  console.log(dateSaved);
-  console.log(timeSaved);
+  // console.log(dateSaved);
+  // console.log(timeSaved);
   return (
     <div className="log-post-container">
       <div className="log-post-content">
@@ -19,7 +19,7 @@ const Logs = (props) => {
         </h2>
         <h2>{routine}</h2>
         <p>{comments}</p>
-        <p>{condition}</p>
+        <p>Skin Condition: {condition}</p>
       </div>
     </div>
   );

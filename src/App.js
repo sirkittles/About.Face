@@ -28,7 +28,7 @@ function App() {
 
   useEffect(() => {
     getLogsData();
-  }, [setGetLogs]);
+  }, [getLogs]);
 
   // const getProductsData = async () => {
   //   const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`, {

@@ -38,6 +38,16 @@ nav {
   justify-content: center;
 }
 
+.log-post-content {
+  width: 350px;
+}
+
+.create-log-container {
+  display: flex;
+  justify-content: center;
+  margin: 5px auto 20px;
+}
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;
