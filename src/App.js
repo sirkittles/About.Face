@@ -6,6 +6,7 @@ import NavBar from "./components/NavBar";
 import Product from "./components/Product";
 import Logs from "./components/Logs";
 import CreateLog from "./components/CreateLog";
+import Routines from "./components/Routines";
 import "./App.css";
 
 function App() {
@@ -14,7 +15,7 @@ function App() {
   // const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
-  const productNames = [];
+  // const productNames = [];
 
   const getLogsData = async () => {
     const res = await axios.get(
@@ -87,6 +88,12 @@ function App() {
                   key={product.id}
                 />
               ))}
+            </div>
+          </Route>
+          <Route path="/routines">
+            <div className="routines-list-container">
+              <h4>Routines</h4>
+              <Routines products={products}/>
             </div>
           </Route>
         </Switch>
