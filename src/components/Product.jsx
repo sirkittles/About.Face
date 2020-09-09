@@ -1,12 +1,19 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
+import React from "react";
 
-const Product = () => {
-  const params = useParams();
-  
+const Product = (props) => {
+  console.log(props);
+  const { name } = props.product.fields;
+  console.log(name);
+
   return (
-    <h4>Product Name</h4>
-  )
-}
+    <div className="products-list">
+      <ul>
+        <li>
+          {name}
+        </li>
+      </ul>
+    </div>
+  );
+};
 
 export default Product;

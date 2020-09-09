@@ -3,13 +3,14 @@ import { Link, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-// import Products from "./components/Products";
+import Product from "./components/Product";
 import Logs from "./components/Logs";
-import "./App.css";
 import CreateLog from "./components/CreateLog";
+import "./App.css";
 
 function App() {
-  // const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [getProducts, setGetProducts] = useState("");
   // const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
@@ -30,18 +31,21 @@ function App() {
     getLogsData();
   }, [getLogs]);
 
-  // const getProductsData = async () => {
-  //   const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`, {
-  //     headers: {
-  //       'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-  //     }
-  //   });
-  //   setProducts(res.data.records);
-  // }
+  const getProductsData = async () => {
+    const res = await axios.get(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      }
+    );
+    setProducts(res.data.records);
+  };
 
-  // useEffect(() => {
-  //   getProducts();
-  // }, [setProducts]);
+  useEffect(() => {
+    getProductsData();
+  }, [getProducts]);
 
   return (
     <div className="App">
@@ -67,13 +71,18 @@ function App() {
                 />
               ))}
             </div>
-            <CreateLog
-              getLogs={getLogs}
-              setGetLogs={setGetLogs}
-            />
+            <CreateLog getLogs={getLogs} setGetLogs={setGetLogs} />
           </Route>
           <Route path="/products">
-            {/* <Products products={products} /> */}
+            <div className="products-list-container">
+              <h4>Product List</h4>
+              {products.map((product) => (
+                <Product
+                  product={product}
+                  key={product.id}
+                />
+              ))}
+            </div>
           </Route>
         </Switch>
       </main>
