@@ -14,6 +14,7 @@ function App() {
   // const [routines, setRoutines] = useState([]);
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
+  const productNames = [];
 
   const getLogsData = async () => {
     const res = await axios.get(
@@ -46,6 +47,10 @@ function App() {
   useEffect(() => {
     getProductsData();
   }, [getProducts]);
+
+  // products.map((product) => (productNames.push(product.name)));
+
+  // console.log(productNames);
 
   return (
     <div className="App">
