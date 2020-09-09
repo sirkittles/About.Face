@@ -12,7 +12,8 @@ import "./App.css";
 function App() {
   const [products, setProducts] = useState([]);
   const [getProducts, setGetProducts] = useState("");
-  // const [routines, setRoutines] = useState([]);
+  const [routines, setRoutines] = useState([]);
+  const [getRoutines, setGetRoutines] = useState("");
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
   // const productNames = [];
@@ -22,7 +23,7 @@ function App() {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       }
     );
@@ -38,7 +39,7 @@ function App() {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
       }
     );
@@ -49,9 +50,18 @@ function App() {
     getProductsData();
   }, [getProducts]);
 
-  // products.map((product) => (productNames.push(product.name)));
+  const getRoutinesData = async () => {
+    const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines`, {
+      headers: {
+        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+      },
+    });
+    setRoutines(res.data.records);
+  };
 
-  // console.log(productNames);
+  useEffect(() => {
+    getRoutinesData();
+  }, [getRoutines]);
 
   return (
     <div className="App">
@@ -77,10 +87,13 @@ function App() {
                 />
               ))}
             </div>
-            <CreateLog getLogs={getLogs} setGetLogs={setGetLogs} />
+            <CreateLog
+              getLogs={getLogs}
+              setGetLogs={setGetLogs}
+            />
           </Route>
           <Route path="/products">
-            <div className="products-list-container">
+            <div className="products-container">
               <h4>Product List</h4>
               {products.map((product) => (
                 <Product
@@ -91,9 +104,9 @@ function App() {
             </div>
           </Route>
           <Route path="/routines">
-            <div className="routines-list-container">
+            <div className="routines-container">
               <h4>Routines</h4>
-              <Routines products={products}/>
+              <Routines products={products} routines={routines}/>
             </div>
           </Route>
         </Switch>

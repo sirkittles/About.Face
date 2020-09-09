@@ -6,7 +6,7 @@ const Product = (props) => {
   console.log(name);
 
   return (
-    <div className="products-list">
+    <div className="products-list-container">
       <ul>
         <li>
           {name}
