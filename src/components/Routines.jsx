@@ -14,8 +14,7 @@ const Routines = (props) => {
       {routines.map((routine, i) => (
         <div key={i} className="routine">
           <h4>{routine.fields.name}</h4>
-          <p>{routine.fields.moisturizer}</p>
-          {/* {(routine.fields.firstCleanser) ?
+          {(routine.fields.firstCleanser) ?
             <p>First Cleanser: {routine.fields.firstCleanser}</p>
             : ""
           }
@@ -46,7 +45,7 @@ const Routines = (props) => {
           {(routine.fields.sunscreen) ?
             <p>Sunscreen: {routine.fields.sunscreen}</p>
             : ""
-          } */}
+          }
         </div>
       ))}
     </div>
