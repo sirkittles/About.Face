@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 const EditLog = (props) => {
-  const { getLogs, setGetLogs, log } = props;
   const [dateSaved, setDateSaved] = useState(props.log.fields.dateSaved);
   const [comments, setComments] = useState(props.log.fields.comments);
   const [routine, setRoutine] = useState(props.log.fields.routine);
   const [condition, setCondition] = useState(props.log.fields.condition);
+  const { getLogs, setGetLogs, log } = props;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,7 +30,7 @@ const EditLog = (props) => {
   return (
     <div className="edit-form-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="edit">Edit Log:</label>
+        <label htmlFor="editLog">Edit Log:</label>
         <input
           name="dateSaved"
           type="datetime-local"

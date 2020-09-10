@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import DeleteRoutine from "./DeleteRoutine";
+import EditRoutine from "./EditRoutine";
 
 const Routines = (props) => {
+  const [toggleEdit, setToggleEdit] = useState(false);
   const products = props.products;
   const routines = props.routines;
   const { getRoutines, setGetRoutines } = props;
@@ -9,6 +11,10 @@ const Routines = (props) => {
 
   const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
   // const id = routines.map((routine) => (routine.id));
+
+  const handleClick = () => {
+    setToggleEdit(!toggleEdit);
+  }
 
   return (
     <div className="routines-list-container">
@@ -48,11 +54,19 @@ const Routines = (props) => {
             : ""
           }
           <div className="edit-routine-section">
+            {toggleEdit && (
+              <EditRoutine
+                routine={routine}
+                getRoutines={getRoutines}
+                setGetRoutines={setGetRoutines}
+              />
+            )}
             <DeleteRoutine
               routine={routine}
               getRoutines={getRoutines}
               setGetRoutines={setGetRoutines}
             />
+            <button onClick={handleClick}>Edit</button>
           </div>
         </div>
       ))}
