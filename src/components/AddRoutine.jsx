@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const AddRoutine = (props) => {
+  const [added, setAdded] = useState(false);
   const [name, setName] = useState('');
   const [firstCleanser, setFirstCleanser] = useState('');
   const [secondCleanser, setSecondCleanser] = useState('');
@@ -32,7 +33,24 @@ const AddRoutine = (props) => {
         'Content-Type': `application/json`,
       }
     });
+    setName('');
+    setFirstCleanser('');
+    setSecondCleanser('');
+    setToner('');
+    setEssence('');
+    setSerum('');
+    setMoisturizer('');
+    setFaceOil('');
+    setSunscreen('');
   }
+
+  const handleClick = () => {
+    setAdded(true);
+    setTimeout(() => {
+      props.setGetRoutines(!props.getRoutines);
+      setAdded(false);
+    }, 2000);
+  };
 
   return (
     <div className="add-routine-container">
@@ -101,7 +119,7 @@ const AddRoutine = (props) => {
           value={sunscreen}
           onChange={(e) => setSunscreen(e.target.value)}
         />
-        <button type="submit">Submit</button>
+        <button type="submit" onClick={handleClick}>{added ? 'Adding!' : 'Submit'}</button>
       </form>
     </div>
   )
