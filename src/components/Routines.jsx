@@ -1,12 +1,9 @@
 import React from "react";
-import AddRoutine from "./AddRoutine.jsx";
 
 const Routines = (props) => {
   console.log(props);
   const products = props.products;
   const routines = props.routines;
-  // console.log(routines);
-  // const { firstCleanser, secondCleanser, toner, essence, serum, moisturizer, faceOil, sunscreen } = routines.fields;
 
   const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
 
@@ -49,7 +46,6 @@ const Routines = (props) => {
           }
         </div>
       ))}
-      <AddRoutine />
     </div>
   )
 }

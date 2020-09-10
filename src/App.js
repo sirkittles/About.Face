@@ -7,6 +7,7 @@ import Product from "./components/Product";
 import Logs from "./components/Logs";
 import CreateLog from "./components/CreateLog";
 import Routines from "./components/Routines";
+import AddRoutine from "./components/AddRoutine.jsx";
 import "./App.css";
 
 function App() {
@@ -16,7 +17,6 @@ function App() {
   const [getRoutines, setGetRoutines] = useState("");
   const [logs, setLogs] = useState([]);
   const [getLogs, setGetLogs] = useState("");
-  // const productNames = [];
 
   const getLogsData = async () => {
     const res = await axios.get(
@@ -108,6 +108,10 @@ function App() {
               <h4>Routines</h4>
               <Routines products={products} routines={routines}/>
             </div>
+            <AddRoutine
+              getRoutines={getRoutines}
+              setGetRoutines={setGetRoutines}
+            />
           </Route>
         </Switch>
       </main>
