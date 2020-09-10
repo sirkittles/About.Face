@@ -68,6 +68,29 @@ li {
   text-align: left;
 }
 
+.routines-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+}
+
+.routines-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
+}
+
+.routine {
+  width: 350px;
+  border: 1px solid black;
+  margin: 20px auto;
+  padding: 10px;
+}
+
 /* .App-header {
   background-color: #282c34;
   min-height: 100vh;

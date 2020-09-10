@@ -57,6 +57,7 @@ const CreateLog = (props) => {
         <input
           name="condition"
           type="text"
+          placeholder="skin condition"
           value={condition}
           onChange={(e) => setCondition(e.target.value)}
         />
