@@ -4,18 +4,24 @@ import EditLog from "./EditLog";
 
 const Logs = (props) => {
   // console.log(props.log.fields);
+  const [toggleEdit, setToggleEdit] = useState(false);
+  const [deleted, setDeleted] = useState(false);
   const { condition, comments, routine } = props.log.fields;
   const { getLogs, setGetLogs, log } = props;
-  let { dateSaved } = props.log.fields;
-  dateSaved = dateSaved.split("T");
-  let timeSaved = dateSaved[1].slice(0, 8);
-  dateSaved = dateSaved[0];
-  dateSaved = new Date(dateSaved.replace(/-/g, "/"));
-  dateSaved = dateSaved.toDateString();
+  const datetime = new Date(log.fields.dateSaved);
+  const dateSaved = datetime.toDateString();
+  const [timeSaved] = datetime.toTimeString().split(' ');
+  console.log(dateSaved);
+  console.log(timeSaved);
+  // let { dateSaved } = props.log.fields;
+  // dateSaved = dateSaved.split("T");
+  // let timeSaved = dateSaved[1].slice(0, 8);
+  // dateSaved = dateSaved[0];
+  // dateSaved = new Date(dateSaved.replace(/-/g, "/"));
+  // dateSaved = dateSaved.toDateString();
   // console.log(dateSaved);
   // console.log(timeSaved);
   // console.log(log.id)
-  const [toggleEdit, setToggleEdit] = useState(false);
 
   const handleDelete = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`;
@@ -24,7 +30,10 @@ const Logs = (props) => {
         Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       },
     });
-    setGetLogs(!getLogs);
+    setDeleted(true);
+    setTimeout(() => {
+      setGetLogs(!getLogs);
+    }, 2000);
   };
 
   const handleClick = () => {
@@ -48,7 +57,7 @@ const Logs = (props) => {
               setGetLogs={setGetLogs}
             />
           )}
-          <button onClick={handleDelete}>Delete</button>
+          <button onClick={handleDelete}>{deleted ? 'Deleting!' : 'Delete'}</button>
           <button onClick={handleClick}>Edit</button>
         </div>
       </div>

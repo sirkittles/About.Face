@@ -34,7 +34,7 @@ const EditLog = (props) => {
         <label htmlFor="edit">Edit Log:</label>
         <input
           name="dateSaved"
-          type="text"
+          type="datetime-local"
           placeholder="mm/dd/yyyy"
           value={dateSaved}
           onChange={(e) => setDateSaved(e.target.value)}
@@ -56,6 +56,7 @@ const EditLog = (props) => {
         <input
           name="condition"
           type="text"
+          value={condition}
           onChange={(e) => setCondition(e.target.value)}
         />
         <button type="submit">Submit</button>

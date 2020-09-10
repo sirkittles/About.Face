@@ -5,13 +5,9 @@ const Routines = (props) => {
   const products = props.products;
   const routines = props.routines;
   console.log(routines);
-  const productNames = [];
+  const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
 
-  products.forEach((product) => {
-    productNames.push(product.fields.name)
-  })
-  console.log(productNames)
-  // const productNames = products.map((product) => (products.fields.name))
+
 
   return (
     <div className="routines-list-container">
