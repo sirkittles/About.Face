@@ -21,7 +21,7 @@ const EditLog = (props) => {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         'Content-Type': `application/json`,
-      }
+      },
     });
     setGetLogs(!getLogs);
     window.location.reload(false);

@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
+// import RoutineInputs from "./RoutineInputs";
 
 const AddRoutine = (props) => {
   const [added, setAdded] = useState(false);
-  const [name, setName] = useState('');
-  const [firstCleanser, setFirstCleanser] = useState('');
-  const [secondCleanser, setSecondCleanser] = useState('');
-  const [toner, setToner] = useState('');
-  const [essence, setEssence] = useState('');
-  const [serum, setSerum] = useState('');
-  const [moisturizer, setMoisturizer] = useState('');
-  const [faceOil, setFaceOil] = useState('');
-  const [sunscreen, setSunscreen] = useState('');
+  const [name, setName] = useState("");
+  const [firstCleanser, setFirstCleanser] = useState("");
+  const [secondCleanser, setSecondCleanser] = useState("");
+  const [toner, setToner] = useState("");
+  const [essence, setEssence] = useState("");
+  const [serum, setSerum] = useState("");
+  const [moisturizer, setMoisturizer] = useState("");
+  const [faceOil, setFaceOil] = useState("");
+  const [sunscreen, setSunscreen] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,25 +25,29 @@ const AddRoutine = (props) => {
       serum,
       moisturizer,
       faceOil,
-      sunscreen
+      sunscreen,
     };
 
-    await axios.post(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines`, { fields: fields }, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-        'Content-Type': `application/json`,
+    await axios.post(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines`,
+      { fields: fields },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          "Content-Type": `application/json`,
+        },
       }
-    });
-    setName('');
-    setFirstCleanser('');
-    setSecondCleanser('');
-    setToner('');
-    setEssence('');
-    setSerum('');
-    setMoisturizer('');
-    setFaceOil('');
-    setSunscreen('');
-  }
+    );
+    setName("");
+    setFirstCleanser("");
+    setSecondCleanser("");
+    setToner("");
+    setEssence("");
+    setSerum("");
+    setMoisturizer("");
+    setFaceOil("");
+    setSunscreen("");
+  };
 
   const handleClick = () => {
     setAdded(true);
@@ -56,6 +61,7 @@ const AddRoutine = (props) => {
     <div className="add-routine-container">
       <form onSubmit={handleSubmit}>
         <label htmlFor="add-routine">Add Routine: </label>
+        {/* <RoutineInputs /> */}
         <input
           name="name"
           type="text"
@@ -119,10 +125,12 @@ const AddRoutine = (props) => {
           value={sunscreen}
           onChange={(e) => setSunscreen(e.target.value)}
         />
-        <button type="submit" onClick={handleClick}>{added ? 'Adding!' : 'Submit'}</button>
+        <button type="submit" onClick={handleClick}>
+          {added ? "Adding!" : "Submit"}
+        </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default AddRoutine;

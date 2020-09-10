@@ -16,6 +16,7 @@ const DeleteRoutine = (props) => {
     setDeleted(true);
     setTimeout(() => {
       setGetRoutines(!getRoutines);
+      setDeleted(false);
     }, 2000);
   };
 
