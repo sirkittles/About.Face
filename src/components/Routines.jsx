@@ -1,4 +1,5 @@
 import React from "react";
+import AddRoutine from "./AddRoutine.jsx";
 
 const Routines = (props) => {
   console.log(props);
@@ -48,6 +49,7 @@ const Routines = (props) => {
           }
         </div>
       ))}
+      <AddRoutine />
     </div>
   )
 }
