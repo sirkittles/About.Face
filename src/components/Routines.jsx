@@ -4,7 +4,7 @@ import DeleteRoutine from "./DeleteRoutine";
 const Routines = (props) => {
   const products = props.products;
   const routines = props.routines;
-  const { setRoutines, getSetRoutines } = props;
+  const { getRoutines, setGetRoutines } = props;
   console.log(props);
 
   const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
@@ -50,8 +50,8 @@ const Routines = (props) => {
           <div className="edit-routine-section">
             <DeleteRoutine
               routine={routine}
-              setRoutines={props.setRoutines}
-              getSetRoutines={props.getSetRoutines}
+              getRoutines={getRoutines}
+              setGetRoutines={setGetRoutines}
             />
           </div>
         </div>

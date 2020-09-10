@@ -4,7 +4,7 @@ import axios from "axios";
 const DeleteRoutine = (props) => {
   console.log(props);
   const [deleted, setDeleted] = useState(false);
-  const { routine } = props;
+  const { routine, getRoutines, setGetRoutines } = props;
 
   const handleDelete = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${routine.id}`;
@@ -15,7 +15,7 @@ const DeleteRoutine = (props) => {
     });
     setDeleted(true);
     setTimeout(() => {
-      props.setGetRoutines(!props.getRoutines);
+      setGetRoutines(!getRoutines);
     }, 2000);
   };
 

@@ -19,7 +19,7 @@ const Logs = (props) => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`;
     await axios.delete(url, {
       headers: {
-        Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
       },
     });
     setDeleted(true);
