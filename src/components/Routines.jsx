@@ -1,11 +1,14 @@
 import React from "react";
+import DeleteRoutine from "./DeleteRoutine";
 
 const Routines = (props) => {
-  console.log(props);
   const products = props.products;
   const routines = props.routines;
+  const { setRoutines, getSetRoutines } = props;
+  console.log(props);
 
   const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
+  // const id = routines.map((routine) => (routine.id));
 
   return (
     <div className="routines-list-container">
@@ -44,6 +47,13 @@ const Routines = (props) => {
             <p>Sunscreen: {routine.fields.sunscreen}</p>
             : ""
           }
+          <div className="edit-routine-section">
+            <DeleteRoutine
+              routine={routine}
+              setRoutines={props.setRoutines}
+              getSetRoutines={props.getSetRoutines}
+            />
+          </div>
         </div>
       ))}
     </div>

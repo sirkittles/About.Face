@@ -106,7 +106,12 @@ function App() {
           <Route path="/routines">
             <div className="routines-container">
               <h4>Routines</h4>
-              <Routines products={products} routines={routines}/>
+              <Routines
+                products={products}
+                routines={routines}
+                getRoutines={getRoutines}
+                setGetRoutines={setGetRoutines}
+              />
             </div>
             <AddRoutine
               getRoutines={getRoutines}
