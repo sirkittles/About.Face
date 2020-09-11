@@ -36,7 +36,7 @@ const Logs = (props) => {
     <div className="log-post-container">
       <div className="log-post-content">
         <h4>
-          {dateSaved} {timeSaved}
+          {dateSaved}
         </h4>
         <Link to="/routines">
           <h4>{routine}</h4>
