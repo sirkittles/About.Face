@@ -12,7 +12,7 @@ const Logs = (props) => {
   // changing format of date/time data;
   const datetime = new Date(log.fields.dateSaved);
   const dateSaved = datetime.toDateString();
-  const [timeSaved] = datetime.toTimeString().split(' ');
+  // const [timeSaved] = datetime.toTimeString().split(' ');
 
   const handleDelete = async () => {
     const url = `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs/${log.id}`;
