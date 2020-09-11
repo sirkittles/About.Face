@@ -1,9 +1,13 @@
+html {
+  background-color: #fcfbf4;
+}
+
 .header {
   text-align: center;
   font-size: 30px;
-  color: white;
-  background-color: lightpink;
-  padding: 20px;
+  color: #F7EDF0;
+  background-color: #f4b4b1;
+  padding: 10px;
 }
 
 a {
@@ -19,6 +23,8 @@ nav {
   text-align: center;
   background-color: lightgrey;
   padding: 5px;
+  position: absolute;
+  width: 100vw;
 }
 
 li {
@@ -31,7 +37,7 @@ li {
   margin: 20px auto;
   justify-content: center;
   align-items: center;
-  width: 400px;
+  max-width: 450px;
 }
 
 .log-post-container {
@@ -49,8 +55,24 @@ li {
 
 .create-log-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 5px auto 20px;
+  margin: 5px auto 10px;
+  max-width: 250px;
+}
+
+#log-routine-button {
+  background-color: transparent;
+  max-width: 120px;
+  margin: 0px auto;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid
+}
+
+.create-log-form {
+  margin-left: 5px;
 }
 
 .products-container {
@@ -102,3 +124,6 @@ li {
   color: white;
 } */
 
+@media (max-width: 500px) {
+
+}

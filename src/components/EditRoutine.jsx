@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const EditRoutine = (props) => {
-  const { routine, getRoutines, setGetRoutines } = props;
+  const { routine, getRoutines, setGetRoutines, productNames } = props;
   const [name, setName] = useState(routine.fields.name);
   const [firstCleanser, setFirstCleanser] = useState(routine.fields.firstCleanser);
   const [secondCleanser, setSecondCleanser] = useState(routine.fields.secondCleanser);
@@ -12,6 +12,8 @@ const EditRoutine = (props) => {
   const [moisturizer, setMoisturizer] = useState(routine.fields.moisturizer);
   const [faceOil, setFaceOil] = useState(routine.fields.faceOil);
   const [sunscreen, setSunscreen] = useState(routine.fields.sunscreen);
+  // console.log(props);
+  console.log(productNames);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,24 +29,25 @@ const EditRoutine = (props) => {
       sunscreen,
     };
 
-    await axios.put(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routine/${routine.id}`, { fields }, {
+    await axios.put(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines/${routine.id}`, { fields }, {
       headers: {
         'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         'Content-Type': `application/json`,
       },
     });
     setGetRoutines(!getRoutines);
-    window.locationo.reload(false);
+    window.location.reload(false);
   }
 
   return (
     <div className="edit-routine-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="editRoutine">Edit Routine: </label>
+        <h3>Edit Routine: </h3>
+        <label htmlFor="name">routine name</label>
         <input
           name="name"
           type="text"
-          placeholder="routine name"
+          placeholder="select"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />

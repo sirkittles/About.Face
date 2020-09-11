@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const DeleteRoutine = (props) => {
-  console.log(props);
+  // console.log(props);
   const [deleted, setDeleted] = useState(false);
   const { routine, getRoutines, setGetRoutines } = props;
 

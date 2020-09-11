@@ -23,11 +23,15 @@ function App() {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/logs`,
       {
         headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
-      }
-    );
-    setLogs(res.data.records);
+      });
+    const sortedLogs = res.data.records.sort((a, b) => {
+      const firstDate = new Date(a.fields.dateSaved);
+      const secondDate = new Date(b.fields.dateSaved);
+      return secondDate - firstDate;
+    });
+    setLogs(sortedLogs);
   };
 
   useEffect(() => {
@@ -39,10 +43,9 @@ function App() {
       `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/products`,
       {
         headers: {
-          'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
-      }
-    );
+      });
     setProducts(res.data.records);
   };
 
@@ -51,11 +54,14 @@ function App() {
   }, [getProducts]);
 
   const getRoutinesData = async () => {
-    const res = await axios.get(`https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines`, {
-      headers: {
-        'Authorization': `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
-      },
-    });
+    const res = await axios.get(
+      `https://api.airtable.com/v0/${process.env.REACT_APP_AIRTABLE_BASE}/routines`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
+        },
+      }
+    );
     setRoutines(res.data.records);
   };
 
@@ -78,6 +84,7 @@ function App() {
           <Route exact path="/">
             <div className="logs-container">
               <h4>Skincare Logs</h4>
+              <CreateLog getLogs={getLogs} setGetLogs={setGetLogs} />
               {logs.map((log) => (
                 <Logs
                   log={log}
@@ -87,25 +94,23 @@ function App() {
                 />
               ))}
             </div>
-            <CreateLog
-              getLogs={getLogs}
-              setGetLogs={setGetLogs}
-            />
           </Route>
           <Route path="/products">
             <div className="products-container">
               <h4>Product List</h4>
               {products.map((product) => (
-                <Product
-                  product={product}
-                  key={product.id}
-                />
+                <Product product={product} key={product.id} />
               ))}
             </div>
           </Route>
           <Route path="/routines">
             <div className="routines-container">
               <h4>Routines</h4>
+              <AddRoutine
+                getRoutines={getRoutines}
+                setGetRoutines={setGetRoutines}
+                products={products}
+              />
               <Routines
                 products={products}
                 routines={routines}
@@ -113,10 +118,6 @@ function App() {
                 setGetRoutines={setGetRoutines}
               />
             </div>
-            <AddRoutine
-              getRoutines={getRoutines}
-              setGetRoutines={setGetRoutines}
-            />
           </Route>
         </Switch>
       </main>

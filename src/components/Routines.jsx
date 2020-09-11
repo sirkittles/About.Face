@@ -7,10 +7,9 @@ const Routines = (props) => {
   const products = props.products;
   const routines = props.routines;
   const { getRoutines, setGetRoutines } = props;
-  console.log(props);
 
-  const productNames = products.map((product) => <p key={product.id}>{product.fields.name}</p>);
-  // const id = routines.map((routine) => (routine.id));
+  const productNames = []
+  products.forEach((product) => productNames.push(product.fields.name))
 
   const handleClick = () => {
     setToggleEdit(!toggleEdit);
@@ -59,6 +58,7 @@ const Routines = (props) => {
                 routine={routine}
                 getRoutines={getRoutines}
                 setGetRoutines={setGetRoutines}
+                productNames={productNames}
               />
             )}
             <DeleteRoutine

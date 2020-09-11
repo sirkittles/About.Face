@@ -9,7 +9,9 @@ const Logs = (props) => {
   const { getLogs, setGetLogs, log } = props;
 
   // changing format of date/time data;
+  console.log(log.fields.dateSaved);
   const datetime = new Date(log.fields.dateSaved);
+  console.log(datetime);
   const dateSaved = datetime.toDateString();
   const [timeSaved] = datetime.toTimeString().split(' ');
   console.log(dateSaved);
@@ -25,6 +27,7 @@ const Logs = (props) => {
     setDeleted(true);
     setTimeout(() => {
       setGetLogs(!getLogs);
+      setDeleted(false);
     }, 2000);
   };
 
