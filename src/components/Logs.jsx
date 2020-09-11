@@ -39,11 +39,11 @@ const Logs = (props) => {
   return (
     <div className="log-post-container">
       <div className="log-post-content">
-        <h2>
+        <h4>
           {dateSaved} {timeSaved}
-        </h2>
+        </h4>
         <Link to="/routines">
-          <h2>{routine}</h2>
+          <h4>{routine}</h4>
         </Link>
         <p>{comments}</p>
         <p>Skin Condition: {condition}</p>

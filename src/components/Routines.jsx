@@ -21,35 +21,35 @@ const Routines = (props) => {
         <div key={i} className="routine">
           <h4>{routine.fields.name}</h4>
           {(routine.fields.firstCleanser) ?
-            <p>First Cleanser: {routine.fields.firstCleanser}</p>
+            <p><span className="bold-text">First Cleanser: </span>{routine.fields.firstCleanser}</p>
             : ""
           }
           {(routine.fields.secondCleanser) ?
-            <p>Second Cleanser: {routine.fields.secondCleanser}</p>
+            <p><span className="bold-text">Second Cleanser: </span>{routine.fields.secondCleanser}</p>
             : ""
           }
           {(routine.fields.toner) ?
-            <p>Toner: {routine.fields.toner}</p>
+            <p><span className="bold-text">Toner: </span>{routine.fields.toner}</p>
             : ""
           }
           {(routine.fields.essence) ?
-            <p>Essence: {routine.fields.essence}</p>
+            <p><span className="bold-text">Essence: </span>{routine.fields.essence}</p>
             : ""
           }
           {(routine.fields.serum) ?
-            <p>Serum: {routine.fields.serum}</p>
+            <p><span className="bold-text">Serum: </span>{routine.fields.serum}</p>
             : ""
           }
           {(routine.fields.moisturizer) ?
-            <p>Moisturizer: {routine.fields.moisturizer}</p>
+            <p><span className="bold-text">Moisturizer: </span>{routine.fields.moisturizer}</p>
             : ""
           }
           {(routine.fields.faceOil) ?
-            <p>Face Oil: {routine.fields.faceOil}</p>
+            <p><span className="bold-text">Face Oil: </span>{routine.fields.faceOil}</p>
             : ""
           }
           {(routine.fields.sunscreen) ?
-            <p>Sunscreen: {routine.fields.sunscreen}</p>
+            <p><span className="bold-text">Sunscreen: </span>{routine.fields.sunscreen}</p>
             : ""
           }
           <div className="edit-routine-section">

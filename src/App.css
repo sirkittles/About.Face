@@ -24,6 +24,11 @@ navbar a:visited {
   color: white;
 }
 
+a:hover {
+  background-color: white;
+  color: #6f6e72;
+}
+
 nav {
   text-align: center;
   background-color: #d7d0d0;
@@ -45,13 +50,13 @@ input {
   margin: 20px auto;
   justify-content: center;
   align-items: center;
-  max-width: 450px;
+  max-width: 400px;
   color: #6f6e72;
 }
 
 .log-post-container {
   display: flex;
-  border: 2px solid #6f6e72;
+  border: 1px solid #6f6e72;
   margin: 20px auto;
   padding: 10px;
   width: 400px;
@@ -59,14 +64,15 @@ input {
 }
 
 .log-post-content {
-  width: 350px;
+  width: 250px;
+  max-width: 250px;
   align-content: center;
   margin: 0px auto;
 }
 
-/* .log-post-content h2 {
+.log-post-content h4 {
   margin: 0px auto;
-} */
+}
 
 .create-log-container {
   display: flex;
@@ -74,6 +80,14 @@ input {
   justify-content: center;
   margin: 5px auto 10px;
   max-width: 250px;
+}
+
+.log-post-content a {
+  color: #6f6e72;
+}
+
+.create-log-form {
+  margin-left: 5px;
 }
 
 #log-routine-button {
@@ -102,13 +116,72 @@ input {
   margin: 0px;
 }
 
-.log-post-content a {
+.routine {
+  width: 350px;
+  max-width: 350px;
+  border: 1px solid #6f6e72;
+  margin: 20px auto;
+  padding: 20px 20px 20px 30px;
+}
+
+.routine p {
+  font-size: 12px;
+}
+
+.routines-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
   color: #6f6e72;
 }
 
-.create-log-form {
-  margin-left: 5px;
+.routines-list-container {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  justify-content: center;
 }
+
+.add-routine-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-routine-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-routine-container form h3 {
+  margin: 5px 0px 5px 0px;
+}
+
+.add-routine-container form input {
+  margin: 0px 0px 5px 0px;
+}
+
+.add-routine-container form select {
+  margin-bottom: 5px;
+}
+
+.add-routine-container form button {
+  margin-top: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
 
 .products-container {
   display: flex;
@@ -125,28 +198,9 @@ input {
   text-align: left;
 }
 
-.routines-container {
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-  justify-content: center;
-  align-items: center;
-  width: 400px;
-}
 
-.routines-list-container {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  justify-content: center;
-}
 
-.routine {
-  width: 350px;
-  border: 1px solid black;
-  margin: 20px auto;
-  padding: 10px;
-}
+
 
 /* .App-header {
   background-color: #282c34;
