@@ -1,3 +1,7 @@
+*:focus:not(.focus-visible) {
+  outline: none;
+}
+
 html {
   background-color: #fcfbf4;
 }
@@ -7,28 +11,32 @@ html {
   font-size: 30px;
   color: #F7EDF0;
   background-color: #f4b4b1;
-  padding: 10px;
+  padding: 5px;
+  width: 100vw;
 }
 
-a {
+navbar a{
   text-decoration: none;
   color: white;
 }
 
-a:visited {
+navbar a:visited {
   color: white;
 }
 
 nav {
   text-align: center;
-  background-color: lightgrey;
+  background-color: #d7d0d0;
   padding: 5px;
-  position: absolute;
   width: 100vw;
 }
 
 li {
   list-style-type: none;
+}
+
+input {
+  margin: 5px;
 }
 
 .logs-container {
@@ -38,11 +46,12 @@ li {
   justify-content: center;
   align-items: center;
   max-width: 450px;
+  color: #6f6e72;
 }
 
 .log-post-container {
   display: flex;
-  border: 1px solid black;
+  border: 2px solid #6f6e72;
   margin: 20px auto;
   padding: 10px;
   width: 400px;
@@ -51,7 +60,13 @@ li {
 
 .log-post-content {
   width: 350px;
+  align-content: center;
+  margin: 0px auto;
 }
+
+/* .log-post-content h2 {
+  margin: 0px auto;
+} */
 
 .create-log-container {
   display: flex;
@@ -68,7 +83,27 @@ li {
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
-  border: 1px solid
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
+
+#add-routine-button {
+  background-color: transparent;
+  max-width: 120px;
+  margin: 0px auto;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
+
+.routine h4 {
+  margin: 0px;
+}
+
+.log-post-content a {
+  color: #6f6e72;
 }
 
 .create-log-form {
@@ -124,6 +159,8 @@ li {
   color: white;
 } */
 
-@media (max-width: 500px) {
-
+@media only screen and (max-width: 500px) {
+  .log-post-container {
+    max-width: 250px;
+  }
 }

@@ -51,8 +51,9 @@ const CreateLog = (props) => {
     <div className="create-log-container">
       <button id="log-routine-button"onClick={handleAdd}>Log Routine</button>
       {toggleAdd && (
-        <form className="create-log-form"onSubmit={handleSubmit}>
-          <label htmlFor="add-log">Add Log: </label>
+        <form className="create-log-form" onSubmit={handleSubmit}>
+          <h3>Add Log: </h3>
+          <label htmlFor="date-saved"></label>
           <input
             name="dateSaved"
             type="datetime-local"
@@ -60,6 +61,7 @@ const CreateLog = (props) => {
             value={dateSaved}
             onChange={(e) => setDateSaved(e.target.value)}
           />
+          <label htmlFor="routine"></label>
           <input
             name="routine"
             type="text"
@@ -67,6 +69,7 @@ const CreateLog = (props) => {
             value={routine}
             onChange={(e) => setRoutine(e.target.value)}
           />
+          <label htmlFor="comments"></label>
           <input
             name="comments"
             type="text"
@@ -74,6 +77,7 @@ const CreateLog = (props) => {
             value={comments}
             onChange={(e) => setComments(e.target.value)}
           />
+          <label htmlFor="condition"></label>
           <input
             name="condition"
             type="text"

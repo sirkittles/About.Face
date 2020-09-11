@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import EditLog from "./EditLog";
 
@@ -41,7 +42,9 @@ const Logs = (props) => {
         <h2>
           {dateSaved} {timeSaved}
         </h2>
-        <h2>{routine}</h2>
+        <Link to="/routines">
+          <h2>{routine}</h2>
+        </Link>
         <p>{comments}</p>
         <p>Skin Condition: {condition}</p>
         <div className="edit-log-section">

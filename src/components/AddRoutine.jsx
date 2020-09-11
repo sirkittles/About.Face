@@ -70,7 +70,7 @@ const AddRoutine = (props) => {
 
   return (
     <div className="add-routine-container">
-      <button onClick={handleAdd}>Add Routine</button>
+      <button onClick={handleAdd} id="add-routine-button">Add Routine</button>
       {toggleAdd && (
         <form onSubmit={handleSubmit}>
           <h3>Add Routine: </h3>
