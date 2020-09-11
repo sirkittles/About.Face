@@ -8,6 +8,7 @@ import Logs from "./components/Logs";
 import CreateLog from "./components/CreateLog";
 import Routines from "./components/Routines";
 import AddRoutine from "./components/AddRoutine.jsx";
+import AddProduct from "./components/AddProduct.jsx";
 import "./App.css";
 
 function App() {
@@ -98,9 +99,15 @@ function App() {
           <Route path="/products">
             <div className="products-container">
               <h4>Product List</h4>
-              {products.map((product) => (
+              <AddProduct
+                getProducts={getProducts}
+                setGetProducts={setGetProducts}
+              />
+              <div className="products-list-container">
+                {products.map((product) => (
                 <Product product={product} key={product.id} />
-              ))}
+                ))}
+              </div>
             </div>
           </Route>
           <Route path="/routines">

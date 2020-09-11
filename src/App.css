@@ -90,8 +90,12 @@ input {
   color: #6f6e72;
 }
 
+.log-post-content h4 {
+  font-size: 18px;
+}
+
 .log-post-content p {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .create-log-form {
@@ -106,6 +110,18 @@ input {
 .create-log-form button {
   margin-top: 5px;
   background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
+
+.edit-log-section button {
+  margin: 0px 5px 0px 0px;
+  background-color: transparent;
+  max-width: 120px;
+  max-height: 40px;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
@@ -148,7 +164,11 @@ input {
 }
 
 .routine p {
-  font-size: 12px;
+  font-size: 16px;
+}
+
+.routine h4 {
+  font-size: 18px;
 }
 
 .routines-container {
@@ -166,6 +186,18 @@ input {
   flex-direction: column;
   width: 400px;
   justify-content: center;
+}
+
+.edit-routine-section button {
+  margin: 0px 5px 0px 0px;
+  background-color: transparent;
+  max-width: 120px;
+  max-height: 40px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
 }
 
 .add-routine-container {
@@ -201,23 +233,61 @@ input {
   font-weight: bold;
 }
 
-
 .products-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 500px;
+  max-width: 400px;
   margin: 20px auto;
-  text-align: center;
+  align-items: center;
+  color: #6f6e72;
 }
 
 .products-list-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #6f6e72;
+  width: 400px;
   text-align: left;
 }
 
+.add-product-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px auto;
+}
 
+.add-product-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.add-product-container form button {
+  margin-top: 5px;
+  background-color: transparent;
+  padding: 5px 5px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
+
+#product-add-button {
+  background-color: transparent;
+  max-width: 120px;
+  max-height: 40px;
+  margin: 0px auto;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
+}
 
 
 
@@ -246,8 +316,29 @@ input {
   }
 }
 
-/* @media only screen and (max-width: 380px) {
-  .header {
-    width: 100vw;
+@media only screen and (max-width: 380px) {
+  .routines-container {
+    max-width: 200px;
   }
-} */
+
+  .routines-list-container {
+    max-width: 200px;
+  }
+
+  .routine {
+    max-width: 200px;
+    padding: 5px;
+  }
+
+  .add-routine-container form select {
+    max-width: 150px;
+  }
+
+  .products-list-container {
+    max-width: 200px;
+  }
+
+  .product-container ul {
+    padding: 0px;
+  }
+}
