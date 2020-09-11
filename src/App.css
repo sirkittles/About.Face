@@ -15,6 +15,10 @@ html {
   width: 100vw;
 }
 
+.header a:visited{
+  color: white;
+}
+
 navbar a{
   text-decoration: none;
   color: white;
@@ -86,8 +90,27 @@ input {
   color: #6f6e72;
 }
 
+.log-post-content p {
+  font-size: 12px;
+}
+
 .create-log-form {
-  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.create-log-form input {
+  margin: 0px 0px 7px 0px;
+}
+
+.create-log-form button {
+  margin-top: 5px;
+  background-color: transparent;
+  padding: 5px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 1px solid #6f6e72;
+  color: #6f6e72;
 }
 
 #log-routine-button {
@@ -156,10 +179,6 @@ input {
   flex-direction: column;
 }
 
-.add-routine-container form h3 {
-  margin: 5px 0px 5px 0px;
-}
-
 .add-routine-container form input {
   margin: 0px 0px 5px 0px;
 }
@@ -217,4 +236,18 @@ input {
   .log-post-container {
     max-width: 250px;
   }
+
+  .create-log-form input {
+    margin: 0px 0px 12px 0px;
+  }
+
+  .routine {
+    max-width: 250px;
+  }
 }
+
+/* @media only screen and (max-width: 380px) {
+  .header {
+    width: 100vw;
+  }
+} */

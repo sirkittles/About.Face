@@ -45,8 +45,8 @@ const Logs = (props) => {
         <Link to="/routines">
           <h4>{routine}</h4>
         </Link>
-        <p>{comments}</p>
-        <p>Skin Condition: {condition}</p>
+        <p><span className="bold-text">Comments: </span>{comments}</p>
+        <p><span className="bold-text">Skin Condition: </span>{condition}</p>
         <div className="edit-log-section">
           {toggleEdit && (
             <EditLog
@@ -62,5 +62,5 @@ const Logs = (props) => {
     </div>
   );
 };
-
+// 
 export default Logs;

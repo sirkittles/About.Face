@@ -30,7 +30,7 @@ const EditLog = (props) => {
   return (
     <div className="edit-form-container">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="editLog">Edit Log:</label>
+        <label htmlFor="editLog" className="bold-text">Edit Log:</label>
         <input
           name="dateSaved"
           type="datetime-local"
