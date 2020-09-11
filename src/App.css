@@ -4,6 +4,7 @@
 
 html {
   background-color: #fcfbf4;
+  font-family: 'Raleway', sans-serif;
 }
 
 .header {
@@ -288,8 +289,6 @@ input {
   border: 1px solid #6f6e72;
   color: #6f6e72;
 }
-
-
 
 /* .App-header {
   background-color: #282c34;

@@ -62,5 +62,5 @@ const Logs = (props) => {
     </div>
   );
 };
-// 
+
 export default Logs;
