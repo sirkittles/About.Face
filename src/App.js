@@ -7,8 +7,8 @@ import Product from "./components/Product";
 import Logs from "./components/Logs";
 import CreateLog from "./components/CreateLog";
 import Routines from "./components/Routines";
-import AddRoutine from "./components/AddRoutine.jsx";
-import AddProduct from "./components/AddProduct.jsx";
+import AddRoutine from "./components/AddRoutine";
+import AddProduct from "./components/AddProduct";
 import "./App.css";
 
 function App() {
@@ -26,7 +26,8 @@ function App() {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
-      });
+      }
+    );
     const sortedLogs = res.data.records.sort((a, b) => {
       const firstDate = new Date(a.fields.dateSaved);
       const secondDate = new Date(b.fields.dateSaved);
@@ -46,7 +47,8 @@ function App() {
         headers: {
           Authorization: `Bearer ${process.env.REACT_APP_AIRTABLE_KEY}`,
         },
-      });
+      }
+    );
     setProducts(res.data.records);
   };
 
@@ -105,7 +107,7 @@ function App() {
               />
               <div className="products-list-container">
                 {products.map((product) => (
-                <Product product={product} key={product.id} />
+                  <Product product={product} key={product.id} />
                 ))}
               </div>
             </div>

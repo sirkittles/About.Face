@@ -40,7 +40,7 @@ const AddProduct = (props) => {
 
   return (
     <div className="add-product-container">
-      <button id="product-add-button" onClick={handleAdd}>Add Product</button>
+      <button id="product-add-button" onClick={handleAdd}>{(toggleAdd) ? "Close" : "Add Product"}</button>
       {toggleAdd && (
         <form onSubmit={handleSubmit}>
           <h3>New Product:</h3>

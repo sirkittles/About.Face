@@ -29,9 +29,17 @@ navbar a:visited {
   color: white;
 }
 
+a {
+  transition: all 0.2s;
+}
+
 a:hover {
   background-color: white;
   color: #6f6e72;
+}
+
+button {
+  transition: all 0.2s;
 }
 
 nav {
@@ -66,6 +74,11 @@ input {
   padding: 10px;
   width: 400px;
   justify-content: center;
+}
+
+.log-post-container button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
 }
 
 .log-post-content {
@@ -118,6 +131,11 @@ input {
   color: #6f6e72;
 }
 
+.create-log-form button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
+}
+
 .edit-log-section button {
   margin: 0px 5px 0px 0px;
   background-color: transparent;
@@ -141,6 +159,11 @@ input {
   color: #6f6e72;
 }
 
+#log-routine-button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
+}
+
 #add-routine-button {
   background-color: transparent;
   max-width: 120px;
@@ -150,6 +173,11 @@ input {
   cursor: pointer;
   border: 1px solid #6f6e72;
   color: #6f6e72;
+}
+
+#add-routine-button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
 }
 
 .routine h4 {
@@ -189,16 +217,47 @@ input {
   justify-content: center;
 }
 
+.edit-routine-container {
+  margin-bottom: 5px;
+  justify-content: center;
+}
+
+.edit-routine-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-routine-container form input {
+  width: 300px;
+  max-width: 300px;
+  margin: 0px 0px 5px 0px;
+}
+
+.edit-routine-container label {
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.edit-routine-container select {
+  margin-bottom: 5px;
+  max-width: 300px;
+}
+
 .edit-routine-section button {
   margin: 0px 5px 0px 0px;
   background-color: transparent;
-  max-width: 120px;
+  max-width: 300px;
   max-height: 40px;
   padding: 5px 10px;
   border-radius: 8px;
   cursor: pointer;
   border: 1px solid #6f6e72;
   color: #6f6e72;
+}
+
+.edit-routine-section button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
 }
 
 .add-routine-container {
@@ -266,6 +325,7 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10px;
 }
 
 .add-product-container form button {
@@ -288,6 +348,11 @@ input {
   cursor: pointer;
   border: 1px solid #6f6e72;
   color: #6f6e72;
+}
+
+#product-add-button:hover {
+  background-color: #6f6e72;
+  color: #F7EDF0;
 }
 
 /* .App-header {

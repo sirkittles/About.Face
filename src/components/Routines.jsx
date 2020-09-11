@@ -66,7 +66,7 @@ const Routines = (props) => {
               getRoutines={getRoutines}
               setGetRoutines={setGetRoutines}
             />
-            <button onClick={handleClick}>Edit</button>
+            <button onClick={handleClick}>{(toggleEdit) ? "Close" : "Edit"}</button>
           </div>
         </div>
       ))}

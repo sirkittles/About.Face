@@ -51,62 +51,150 @@ const EditRoutine = (props) => {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <input
-          name="firstCleanser"
-          type="text"
-          placeholder="first cleanser"
-          value={firstCleanser}
-          onChange={(e) => setFirstCleanser(e.target.value)}
-        />
-        <input
-          name="secondCleanser"
-          type="text"
-          placeholder="second cleanser"
-          value={secondCleanser}
-          onChange={(e) => setSecondCleanser(e.target.value)}
-        />
-        <input
-          name="toner"
-          type="text"
-          placeholder="toner"
-          value={toner}
-          onChange={(e) => setToner(e.target.value)}
-        />
-        <input
-          name="essence"
-          type="text"
-          placeholder="essence"
-          value={essence}
-          onChange={(e) => setEssence(e.target.value)}
-        />
-        <input
-          name="serum"
-          type="text"
-          placeholder="serum"
-          value={serum}
-          onChange={(e) => setSerum(e.target.value)}
-        />
-        <input
-          name="moisturizer"
-          type="text"
-          placeholder="moisturizer"
-          value={moisturizer}
-          onChange={(e) => setMoisturizer(e.target.value)}
-        />
-        <input
-          name="faceOil"
-          type="text"
-          placeholder="face oil"
-          value={faceOil}
-          onChange={(e) => setFaceOil(e.target.value)}
-        />
-        <input
-          name="sunscreen"
-          type="text"
-          placeholder="sunscreen"
-          value={sunscreen}
-          onChange={(e) => setSunscreen(e.target.value)}
-        />
+        <label htmlFor="first-cleanser">first cleanser</label>
+          <select
+            name="firstCleanser"
+            type="text"
+            id="firstCleanser-select"
+            value={firstCleanser}
+            onChange={(e) => setFirstCleanser(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i} >
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="second-cleanser">second cleanser</label>
+          <select
+            name="secondCleanser"
+            type="text"
+            id="secondCleanser-select"
+            value={secondCleanser}
+            onChange={(e) => setSecondCleanser(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="toner">toner</label>
+          <select
+            name="toner"
+            type="text"
+            id="toner-select"
+            value={toner}
+            onChange={(e) => setToner(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="essence">essence</label>
+          <select
+            name="essence"
+            type="text"
+            id="essence-select"
+            value={essence}
+            onChange={(e) => setEssence(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="serum">serum</label>
+          <select
+            name="serum"
+            type="text"
+            id="serum-select"
+            value={serum}
+            onChange={(e) => setSerum(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="moisturizer">moisturizer</label>
+          <select
+            name="moisturizer"
+            type="text"
+            id="moisturizer-select"
+            value={moisturizer}
+            onChange={(e) => setMoisturizer(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="face-oil">face oil</label>
+          <select
+            name="faceOil"
+            type="text"
+            id="faceOil-select"
+            value={faceOil}
+            onChange={(e) => setFaceOil(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
+          <label htmlFor="sunscreen">sunscreen</label>
+          <select
+            name="sunscreen"
+            type="text"
+            id="sunscreen-select"
+            value={sunscreen}
+            onChange={(e) => setSunscreen(e.target.value)}
+          >
+            <option value="">select</option>
+            {productNames.map((product, i) => {
+              return (
+                <option key={i}>
+                  {product}
+                </option>
+              );
+            })}
+            ;
+          </select>
         <button type="submit">Submit</button>
       </form>
     </div>

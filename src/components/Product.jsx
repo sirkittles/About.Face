@@ -1,9 +1,10 @@
 import React from "react";
+import axios from "axios";
 
 const Product = (props) => {
-  // console.log(props);
+  console.log(props);
   const { name } = props.product.fields;
-  // console.log(name);
+  // const { getProducts, setGetProducts } = props;
 
   return (
     <div className="product-container">

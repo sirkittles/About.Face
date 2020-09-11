@@ -49,7 +49,7 @@ const CreateLog = (props) => {
 
   return (
     <div className="create-log-container">
-      <button id="log-routine-button" onClick={handleAdd}>Log Routine</button>
+      <button id="log-routine-button" onClick={handleAdd}>{(toggleAdd) ? "Close" : "Log Routine"}</button>
       {toggleAdd && (
         <form className="create-log-form" onSubmit={handleSubmit}>
           <h3>Add Log: </h3>

@@ -56,7 +56,7 @@ const Logs = (props) => {
             />
           )}
           <button onClick={handleDelete}>{deleted ? 'Deleting!' : 'Delete'}</button>
-          <button onClick={handleClick}>Edit</button>
+          <button onClick={handleClick}>{(toggleEdit) ? "Close" : "Edit"}</button>
         </div>
       </div>
     </div>
