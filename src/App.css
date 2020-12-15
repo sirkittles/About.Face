@@ -29,13 +29,12 @@ navbar a:visited {
   color: white;
 }
 
-navbar p {
+.navbar a {
   transition: all 0.2s;
   color: white;
-  font-weight: 900;
 }
 
-a:hover {
+.navbar a:hover {
   background-color: white;
   color: #6f6e72;
 }
