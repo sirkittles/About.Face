@@ -12,6 +12,7 @@ const Logs = (props) => {
   // changing format of date/time data;
   const datetime = new Date(log.fields.dateSaved);
   const dateSaved = datetime.toDateString();
+  console.log(datetime);
   // const [timeSaved] = datetime.toTimeString().split(' ');
 
   const handleDelete = async () => {
