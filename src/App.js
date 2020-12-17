@@ -3,7 +3,7 @@ import { Link, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
 import NavBar from "./components/NavBar";
-import Product from "./components/Product";
+import Products from "./components/Products";
 import Logs from "./components/Logs";
 import CreateLog from "./components/CreateLog";
 import Routines from "./components/Routines";
@@ -107,7 +107,7 @@ function App() {
               />
               <div className="products-list-container">
                 {products.map((product) => (
-                  <Product product={product} key={product.id} />
+                  <Products product={product} key={product.id} />
                 ))}
               </div>
             </div>
